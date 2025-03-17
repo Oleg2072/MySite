@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.Kurator {
+    width: 300px;
+    height: 350px;
+    border: 5px solid black;
+    animation-name: anim_start;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.About {
+    flex: 20%;
+    background-color: #E6D690;
+    padding: 20px;
+}
+
+.HowI {
+    flex: 75%;
+    background-color: #F5F5DC;
+    padding: 20px;
+    padding-right: 70px;
+    position: relative;
+}
+
+.ALL {
+    /* flex-wrap: wrap; */
+    display: flex
+}
+
+.ALLAbout {
+    display: flex;
+}
+
+.video {
+    position: absolute;
+    right: 130px;
+    top: 130px;
+    width: 330px;
+    border: 5px solid black;
+}
+
+.seti {
+    flex: 5%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* .hidden {
+    display: none;
+} */
+
+.moreblock {
+    background-color: gray;
+    width: 50%;
+    height: 800px;
+    padding: 20px;
+    /* margin-left: 25%; */
+    border-radius: 20px;
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* Сохраняет конечное состояние анимации */
+    display: none;
+    
+}
+
+/* Анимация появления */
+
+
+.moreblock.show {
+    display: block;
+    animation-name: appearAnimation; /* Запускаем анимацию появления */
+}
+
+.moreblock.hidden {
+    animation-name: disappearAnimation; /* Запускаем анимацию исчезания */
+    animation-duration: 0.5s;
+    
+}
+
+.moretext {
+    font-size: 24px;
+}
+
+.morescroll {
+    overflow-y: auto;
+    height: 670px;
+    background-color: #a0a0a0;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.hideButton {
+    width: 150px;
+    height: 70px;
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    /* margin-left: 65%;
+    margin-top: 7%; */
+}
+
+.blur {
+    /* backdrop-filter: blur(100px); */
+    animation-name: smooth_Blur;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+/* АНИМАЦИИ            вввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввв */
+
+@keyframes appearAnimation {
+    from {
+        transform: translateY(120px);
+        opacity: 0;
+        display: none;
+    }
+    to {
+        transform: translateY(70px);
+        opacity: 1;
+    }
+}
+
+@keyframes disappearAnimation {
+    from {
+        transform: translateY(70px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+}
+
+@keyframes smooth_Blur {
+    from {
+        filter: blur(0px);
+    }
+    to {
+        filter: blur(5px);
+    }
+}
+
+@keyframes anim_start {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
